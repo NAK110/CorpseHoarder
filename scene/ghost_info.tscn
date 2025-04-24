@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjd0dp7kd8uxh"]
+
+[ext_resource type="Script" uid="uid://16pugufavylw" path="res://scripts/ghost_info.gd" id="1_1kcx1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0aacf"]
+radius = 126.099
+
+[node name="ghost_info" type="Area2D"]
+script = ExtResource("1_1kcx1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(500, 571)
+shape = SubResource("CircleShape2D_0aacf")

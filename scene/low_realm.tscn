@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvtcr58ycrmta"]
+
+[ext_resource type="Script" uid="uid://cjhosyigb3l80" path="res://scripts/low_realm.gd" id="1_7hqpt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wal67"]
+size = Vector2(86, 111.75)
+
+[node name="low_realm_button" type="Area2D"]
+script = ExtResource("1_7hqpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(42, 56.125)
+shape = SubResource("RectangleShape2D_wal67")

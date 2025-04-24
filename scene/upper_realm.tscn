@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://boaojc5ku6dsb"]
+
+[ext_resource type="Script" uid="uid://cp2q46kqf3mgs" path="res://scripts/upper_realm.gd" id="1_4f7n6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwfrp"]
+size = Vector2(86, 111.75)
+
+[node name="upper_realm_button" type="Area2D"]
+script = ExtResource("1_4f7n6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(42, 56.125)
+shape = SubResource("RectangleShape2D_jwfrp")

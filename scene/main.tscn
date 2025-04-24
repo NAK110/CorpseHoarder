@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://brfipxfbth4su"]
+
+[ext_resource type="Texture2D" uid="uid://cpu1umg144pas" path="res://assets/img/Layer 0.jpg" id="1_itxqv"]
+[ext_resource type="Script" uid="uid://cl633a4vk366t" path="res://scripts/canvas_layer.gd" id="2_of57s"]
+[ext_resource type="PackedScene" uid="uid://dqc8ftaxkmbhh" path="res://scene/bell.tscn" id="2_v0l8b"]
+[ext_resource type="PackedScene" uid="uid://cvtcr58ycrmta" path="res://scene/low_realm.tscn" id="3_0ha60"]
+[ext_resource type="Texture2D" uid="uid://cl0np6bgiemhh" path="res://assets/img/Layer 1.jpg" id="3_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://c0ilocjawvhts" path="res://scene/middle_realm.tscn" id="4_4j5ol"]
+[ext_resource type="PackedScene" uid="uid://boaojc5ku6dsb" path="res://scene/upper_realm.tscn" id="5_p1hux"]
+[ext_resource type="PackedScene" uid="uid://cjd0dp7kd8uxh" path="res://scene/ghost_info.tscn" id="6_4j5ol"]
+
+[node name="main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.5, 325)
+scale = Vector2(0.899219, 0.762016)
+texture = ExtResource("1_itxqv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_of57s")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 1155.0
+offset_bottom = 649.0
+texture = ExtResource("1_itxqv")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1154.0
+offset_bottom = 649.0
+texture = ExtResource("3_b5f6u")
+expand_mode = 1
+
+[node name="low_realm_button" parent="CanvasLayer" instance=ExtResource("3_0ha60")]
+position = Vector2(986, 66)
+
+[node name="middle_realm_button" parent="CanvasLayer" instance=ExtResource("4_4j5ol")]
+position = Vector2(990, 230)
+
+[node name="upper_realm_button" parent="CanvasLayer" instance=ExtResource("5_p1hux")]
+position = Vector2(989, 391)
+
+[node name="Bell" parent="CanvasLayer" instance=ExtResource("2_v0l8b")]
+position = Vector2(101, 501)
+
+[node name="ghost_info" parent="CanvasLayer" instance=ExtResource("6_4j5ol")]
