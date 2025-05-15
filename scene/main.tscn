@@ -1,13 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://brfipxfbth4su"]
+[gd_scene load_steps=14 format=3 uid="uid://brfipxfbth4su"]
 
 [ext_resource type="Texture2D" uid="uid://cpu1umg144pas" path="res://assets/img/Layer 0.jpg" id="1_itxqv"]
 [ext_resource type="Script" uid="uid://cl633a4vk366t" path="res://scripts/canvas_layer.gd" id="2_of57s"]
 [ext_resource type="PackedScene" uid="uid://dqc8ftaxkmbhh" path="res://scene/bell.tscn" id="2_v0l8b"]
 [ext_resource type="PackedScene" uid="uid://cvtcr58ycrmta" path="res://scene/low_realm.tscn" id="3_0ha60"]
-[ext_resource type="Texture2D" uid="uid://cl0np6bgiemhh" path="res://assets/img/Layer 1.jpg" id="3_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://d0jai5iekca7y" path="res://assets/img/Layer 0.png" id="3_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://d2cx1heto8vxo" path="res://assets/img/char/grandpa.png" id="3_of57s"]
 [ext_resource type="PackedScene" uid="uid://c0ilocjawvhts" path="res://scene/middle_realm.tscn" id="4_4j5ol"]
+[ext_resource type="Texture2D" uid="uid://bw0ld6usdrk6j" path="res://assets/img/char/dark_grandpa.png" id="4_mswub"]
+[ext_resource type="Texture2D" uid="uid://cvjh1kjiubnx" path="res://assets/img/mirror.png" id="4_wscrc"]
 [ext_resource type="PackedScene" uid="uid://boaojc5ku6dsb" path="res://scene/upper_realm.tscn" id="5_p1hux"]
 [ext_resource type="PackedScene" uid="uid://cjd0dp7kd8uxh" path="res://scene/ghost_info.tscn" id="6_4j5ol"]
+[ext_resource type="PackedScene" uid="uid://b8j4wro6o4iru" path="res://scene/yes_button.tscn" id="11_mswub"]
+[ext_resource type="PackedScene" uid="uid://b5xp86gxdlqjw" path="res://scene/no_button.tscn" id="12_hybxs"]
 
 [node name="main" type="Node2D"]
 
@@ -20,18 +25,29 @@ texture = ExtResource("1_itxqv")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_of57s")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = -2.0
-offset_top = 2.0
-offset_right = 1155.0
-offset_bottom = 649.0
-texture = ExtResource("1_itxqv")
+[node name="Mirror" type="TextureRect" parent="CanvasLayer"]
+offset_left = 134.0
+offset_top = 4.0
+offset_right = 898.0
+offset_bottom = 456.0
+texture = ExtResource("4_wscrc")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
-offset_right = 1154.0
-offset_bottom = 649.0
+[node name="AngryGrandpa" type="TextureRect" parent="CanvasLayer"]
+offset_right = 525.0
+offset_bottom = 554.0
+texture = ExtResource("4_mswub")
+expand_mode = 1
+
+[node name="Grandpa" type="TextureRect" parent="CanvasLayer"]
+offset_right = 524.0
+offset_bottom = 554.0
+texture = ExtResource("3_of57s")
+expand_mode = 1
+
+[node name="MainLayer" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1151.0
+offset_bottom = 651.0
 texture = ExtResource("3_b5f6u")
 expand_mode = 1
 
@@ -48,3 +64,7 @@ position = Vector2(989, 391)
 position = Vector2(101, 501)
 
 [node name="ghost_info" parent="CanvasLayer" instance=ExtResource("6_4j5ol")]
+
+[node name="yes_button" parent="CanvasLayer" instance=ExtResource("11_mswub")]
+
+[node name="no_button" parent="CanvasLayer" instance=ExtResource("12_hybxs")]

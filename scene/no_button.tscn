@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5xp86gxdlqjw"]
+
+[ext_resource type="Script" uid="uid://kgmlbor0exbe" path="res://scripts/no_button.gd" id="1_4x5xp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y61xs"]
+radius = 55.0091
+
+[node name="no_button" type="Area2D"]
+script = ExtResource("1_4x5xp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(921, 521)
+shape = SubResource("CircleShape2D_y61xs")
