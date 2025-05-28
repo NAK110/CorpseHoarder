@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://brfipxfbth4su"]
+[gd_scene load_steps=16 format=3 uid="uid://brfipxfbth4su"]
 
 [ext_resource type="Texture2D" uid="uid://cpu1umg144pas" path="res://assets/img/Layer 0.jpg" id="1_itxqv"]
 [ext_resource type="Script" uid="uid://cl633a4vk366t" path="res://scripts/canvas_layer.gd" id="2_of57s"]
@@ -13,6 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://cjd0dp7kd8uxh" path="res://scene/ghost_info.tscn" id="6_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://b8j4wro6o4iru" path="res://scene/yes_button.tscn" id="11_mswub"]
 [ext_resource type="PackedScene" uid="uid://b5xp86gxdlqjw" path="res://scene/no_button.tscn" id="12_hybxs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mswub"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_hybxs"]
+font_size = 20
 
 [node name="main" type="Node2D"]
 
@@ -32,6 +38,11 @@ offset_right = 898.0
 offset_bottom = 456.0
 texture = ExtResource("4_wscrc")
 expand_mode = 1
+
+[node name="FlashEffect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1150.0
+offset_bottom = 652.0
 
 [node name="AngryGrandpa" type="TextureRect" parent="CanvasLayer"]
 offset_right = 525.0
@@ -67,4 +78,41 @@ position = Vector2(101, 501)
 
 [node name="yes_button" parent="CanvasLayer" instance=ExtResource("11_mswub")]
 
+[node name="Label" type="Label" parent="CanvasLayer/yes_button"]
+offset_left = 767.0
+offset_top = 586.0
+offset_right = 821.0
+offset_bottom = 614.0
+text = "Let in"
+label_settings = SubResource("LabelSettings_mswub")
+
 [node name="no_button" parent="CanvasLayer" instance=ExtResource("12_hybxs")]
+
+[node name="Label" type="Label" parent="CanvasLayer/no_button"]
+offset_left = 877.0
+offset_top = 585.0
+offset_right = 980.0
+offset_bottom = 613.0
+text = "Turn Away"
+label_settings = SubResource("LabelSettings_hybxs")
+
+[node name="KarmaPanel" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -104.0
+offset_right = 170.0
+grow_vertical = 0
+
+[node name="Title" type="Label" parent="CanvasLayer/KarmaPanel"]
+layout_mode = 2
+text = "Karma Score"
+
+[node name="GhostCounter" type="Label" parent="CanvasLayer/KarmaPanel"]
+layout_mode = 2
+
+[node name="YokaiCounter" type="Label" parent="CanvasLayer/KarmaPanel"]
+layout_mode = 2
+
+[node name="TotalKarma" type="Label" parent="CanvasLayer/KarmaPanel"]
+layout_mode = 2
