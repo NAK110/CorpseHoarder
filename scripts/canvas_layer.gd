@@ -6,6 +6,13 @@ extends CanvasLayer
 @onready var ghost_counter = $KarmaPanel/GhostCounter
 @onready var yokai_counter = $KarmaPanel/YokaiCounter
 @onready var total_karma_counter = $KarmaPanel/TotalKarma
+@onready var round_left = $KarmaPanel/RoundLeft
+@onready var game_overPanel = $GameOverPanel
+@onready var gameover_karmaResult = $GameOverPanel/TotalKarmaResult
+@onready var play_again_button = $GameOverPanel/PlayAgain
+@onready var game_result = $GameOverPanel/GameResult
+@onready var mainLayer = $MainLayer
+@onready var yokaiScream = $yokaiScream
 
 var characters = []
 var angry_variants = {}
@@ -14,6 +21,7 @@ var is_youKai = false  # Tracks if the current character is a youKai
 var ghosts_let_in := 0
 var yokai_let_in := 0
 var total_karma := 0
+var round_count := 0
 var can_interact := false
 
 
@@ -24,7 +32,7 @@ func _ready():
 	angry_variants = {
 		$Grandpa: $AngryGrandpa
 	}
-
+	game_overPanel.visible = false
 	for npc in characters:
 		npc.visible = false
 		if angry_variants.has(npc):
@@ -32,6 +40,7 @@ func _ready():
 
 	yes_button.yes_clicked.connect(_on_yes_clicked)
 	no_button.no_clicked.connect(_on_no_clicked)
+	play_again_button.pressed.connect(_on_play_again_pressed)
 
 	show_next_character()
 
@@ -40,7 +49,17 @@ func _on_character_arrived():
 
 func show_next_character():
 	if current_index >= characters.size():
-		print("All characters shown.")
+		round_count += 1
+		update_karma_labels()
+		
+		if round_count >= 2:
+			#print("Game End")
+			show_gameOver()
+			return
+		
+		current_index = 0
+		characters.shuffle()
+		show_next_character()
 		return
 
 	var npc = characters[current_index]
@@ -66,10 +85,30 @@ func _on_no_clicked():
 	print("No clicked")
 	handle_decision(false)
 	
+func _on_play_again_pressed():
+	game_overPanel.visible = false
+	ghosts_let_in = 0
+	yokai_let_in = 0
+	total_karma = 0
+	round_count = 0
+	current_index = 0
+	update_karma_labels()
+	show_next_character()
+
+	
 func update_karma_labels():
 	ghost_counter.text = "Ghosts Let In: %d" % ghosts_let_in
 	yokai_counter.text = "Yokai Let In: %d" % yokai_let_in
 	total_karma_counter.text = "Total Karma: %d" % total_karma
+	round_left.text = "Rounds Left: %d" % clamp(2 - round_count, 0, 2)
+	
+func show_gameOver(): 
+	if total_karma < 0: 
+		game_result.text = "You Lose!"
+	else: 
+		game_result.text = "You Win!"
+	gameover_karmaResult.text = "Total Karma: %d" % total_karma
+	game_overPanel.visible = true
 
 func trigger_flash():
 	flash_effect.visible = true
@@ -91,6 +130,9 @@ func handle_decision(choice: bool):
 		var youKai = angry_variants[npc]
 		youKai.position = npc.position
 		youKai.visible = true
+		yokaiScream.play()
+		#await get_tree().create_timer(5.0).timeout
+		#yokaiScream.stop()
 		youKai.modulate.a = 1.0
 		youKai.scale = Vector2(0.9, 0.9)
 

@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://brfipxfbth4su"]
+[gd_scene load_steps=17 format=3 uid="uid://brfipxfbth4su"]
 
-[ext_resource type="Texture2D" uid="uid://cpu1umg144pas" path="res://assets/img/Layer 0.jpg" id="1_itxqv"]
 [ext_resource type="Script" uid="uid://cl633a4vk366t" path="res://scripts/canvas_layer.gd" id="2_of57s"]
 [ext_resource type="PackedScene" uid="uid://dqc8ftaxkmbhh" path="res://scene/bell.tscn" id="2_v0l8b"]
 [ext_resource type="PackedScene" uid="uid://cvtcr58ycrmta" path="res://scene/low_realm.tscn" id="3_0ha60"]
@@ -13,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cjd0dp7kd8uxh" path="res://scene/ghost_info.tscn" id="6_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://b8j4wro6o4iru" path="res://scene/yes_button.tscn" id="11_mswub"]
 [ext_resource type="PackedScene" uid="uid://b5xp86gxdlqjw" path="res://scene/no_button.tscn" id="12_hybxs"]
+[ext_resource type="PackedScene" uid="uid://d4ml8swrshp2r" path="res://scene/game_over_panel.tscn" id="13_mswub"]
+[ext_resource type="AudioStream" uid="uid://dvj2d30yko3xq" path="res://assets/soundtrack/horror.mp3" id="14_hybxs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mswub"]
 font_size = 20
@@ -21,12 +22,6 @@ font_size = 20
 font_size = 20
 
 [node name="main" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(576.5, 325)
-scale = Vector2(0.899219, 0.762016)
-texture = ExtResource("1_itxqv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_of57s")
@@ -104,10 +99,6 @@ offset_top = -104.0
 offset_right = 170.0
 grow_vertical = 0
 
-[node name="Title" type="Label" parent="CanvasLayer/KarmaPanel"]
-layout_mode = 2
-text = "Karma Score"
-
 [node name="GhostCounter" type="Label" parent="CanvasLayer/KarmaPanel"]
 layout_mode = 2
 
@@ -116,3 +107,15 @@ layout_mode = 2
 
 [node name="TotalKarma" type="Label" parent="CanvasLayer/KarmaPanel"]
 layout_mode = 2
+
+[node name="RoundLeft" type="Label" parent="CanvasLayer/KarmaPanel"]
+layout_mode = 2
+
+[node name="GameOverPanel" parent="CanvasLayer" instance=ExtResource("13_mswub")]
+visible = false
+
+[node name="yokaiScream" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("14_hybxs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 331)

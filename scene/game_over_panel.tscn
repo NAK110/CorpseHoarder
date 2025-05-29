@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ml8swrshp2r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qwwsn"]
+font_size = 34
+
+[node name="GameOverPanel" type="Panel"]
+offset_right = 1150.0
+offset_bottom = 651.0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 152.0
+offset_right = 671.0
+offset_bottom = 199.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_qwwsn")
+
+[node name="GameResult" type="Label" parent="."]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 220.0
+offset_right = 611.0
+offset_bottom = 243.0
+
+[node name="TotalKarmaResult" type="Label" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 259.0
+offset_right = 627.0
+offset_bottom = 282.0
+
+[node name="PlayAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 305.0
+offset_right = 651.0
+offset_bottom = 374.0
+text = "Play Again"
