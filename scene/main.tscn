@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://brfipxfbth4su"]
+[gd_scene load_steps=18 format=3 uid="uid://brfipxfbth4su"]
 
 [ext_resource type="Script" uid="uid://cl633a4vk366t" path="res://scripts/canvas_layer.gd" id="2_of57s"]
 [ext_resource type="PackedScene" uid="uid://dqc8ftaxkmbhh" path="res://scene/bell.tscn" id="2_v0l8b"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cjd0dp7kd8uxh" path="res://scene/ghost_info.tscn" id="6_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://b8j4wro6o4iru" path="res://scene/yes_button.tscn" id="11_mswub"]
 [ext_resource type="PackedScene" uid="uid://b5xp86gxdlqjw" path="res://scene/no_button.tscn" id="12_hybxs"]
+[ext_resource type="FontFile" uid="uid://b1uxjfmiyyjv2" path="res://assets/font/OldNewspaperTypes.ttf" id="12_v2gmf"]
 [ext_resource type="PackedScene" uid="uid://d4ml8swrshp2r" path="res://scene/game_over_panel.tscn" id="13_mswub"]
 [ext_resource type="AudioStream" uid="uid://dvj2d30yko3xq" path="res://assets/soundtrack/horror.mp3" id="14_hybxs"]
 
@@ -74,42 +75,49 @@ position = Vector2(101, 501)
 [node name="yes_button" parent="CanvasLayer" instance=ExtResource("11_mswub")]
 
 [node name="Label" type="Label" parent="CanvasLayer/yes_button"]
-offset_left = 767.0
+offset_left = 757.0
 offset_top = 586.0
-offset_right = 821.0
+offset_right = 832.0
 offset_bottom = 614.0
+theme_override_fonts/font = ExtResource("12_v2gmf")
 text = "Let in"
 label_settings = SubResource("LabelSettings_mswub")
+uppercase = true
 
 [node name="no_button" parent="CanvasLayer" instance=ExtResource("12_hybxs")]
 
 [node name="Label" type="Label" parent="CanvasLayer/no_button"]
-offset_left = 877.0
-offset_top = 585.0
-offset_right = 980.0
-offset_bottom = 613.0
+offset_left = 866.0
+offset_top = 587.0
+offset_right = 992.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("12_v2gmf")
 text = "Turn Away"
 label_settings = SubResource("LabelSettings_hybxs")
+uppercase = true
 
 [node name="KarmaPanel" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -104.0
-offset_right = 170.0
-grow_vertical = 0
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 228.0
+offset_bottom = 184.0
+size_flags_horizontal = 0
 
 [node name="GhostCounter" type="Label" parent="CanvasLayer/KarmaPanel"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_v2gmf")
 
 [node name="YokaiCounter" type="Label" parent="CanvasLayer/KarmaPanel"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_v2gmf")
 
 [node name="TotalKarma" type="Label" parent="CanvasLayer/KarmaPanel"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_v2gmf")
 
 [node name="RoundLeft" type="Label" parent="CanvasLayer/KarmaPanel"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_v2gmf")
 
 [node name="GameOverPanel" parent="CanvasLayer" instance=ExtResource("13_mswub")]
 visible = false

@@ -78,10 +78,18 @@ func show_next_character():
 	tween.connect("finished", _on_character_arrived)
 
 func _on_yes_clicked():
+	# Check if interaction is allowed
+	if not can_interact:
+		return
+	
 	print("Yes clicked")
 	handle_decision(true)
 
 func _on_no_clicked():
+	# Check if interaction is allowed
+	if not can_interact:
+		return
+	
 	print("No clicked")
 	handle_decision(false)
 	
@@ -121,6 +129,9 @@ func trigger_flash():
 	)
 
 func handle_decision(choice: bool):
+	# Disable interaction as soon as a decision is made
+	can_interact = false
+	
 	trigger_flash()
 	
 	var npc = characters[current_index]

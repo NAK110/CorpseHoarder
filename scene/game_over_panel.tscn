@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4ml8swrshp2r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qwwsn"]
-font_size = 34
+font_size = 32
 
 [node name="GameOverPanel" type="Panel"]
 offset_right = 1150.0
@@ -15,6 +15,7 @@ offset_right = 671.0
 offset_bottom = 199.0
 text = "Game Over"
 label_settings = SubResource("LabelSettings_qwwsn")
+horizontal_alignment = 1
 
 [node name="GameResult" type="Label" parent="."]
 layout_mode = 0
