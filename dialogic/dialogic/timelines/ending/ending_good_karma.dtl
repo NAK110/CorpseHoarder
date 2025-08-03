@@ -1,0 +1,17 @@
+MC: (They came with familiar faces. And I let them pass.)
+	MC: (Some I remembered... some I only wished I did.)
+	MC: (But they were real. They were ready.)
+	MC: (And maybe... so was I.)
+	MC: (I didn't falter. I trusted what little heart I had left.)
+	MC: (The Division will ask what I want next.)
+	MC: (And maybe, for once... I'll choose for myself.)
+	[signal arg="show_ending_choices"]
+	- Resign
+		MC: (I've done enough. Let someone else guard this place.)
+		MC: (I will go. Find my own ending. Or a new beginning.)
+		MC: (I choose reincarnation.)
+	- Stay
+		MC: (There will be more. More lost souls. More faces.)
+		MC: (If I could bring clarity once, perhaps again.)
+		MC: (I'll stay.)
+		MC: (The gate will remain closed. Until I open it again.)

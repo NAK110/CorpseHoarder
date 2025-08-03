@@ -1,0 +1,15 @@
+MC: (I failed.)
+MC: (Every one of them... was a lie.)
+MC: (And I believed every word.)
+MC: (They're through now. And I've weakened the veil.)
+MC: (The Division won't forgive this.)
+MC: (And I don't blame them.)
+[signal arg="show_ending_choices"]
+- Collapse
+	MC: (I won't choose.)
+	MC: (Let the fog take me. Let memory dissolve.)
+	MC: (Whatever I was meant to do... I couldn't.)
+- Stay
+	MC: (I will not run.)
+	MC: (Even if I let them in... I will keep the rest out.)
+	MC: (This gate may be stained, but it still stands.)

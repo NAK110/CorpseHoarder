@@ -1,0 +1,16 @@
+MC: (I was wrong.)
+	MC: (They were too convincing. Too close. Too... needed.)
+	MC: (I let too many pass, and now the mist thickens.)
+	MC: (Maybe I wanted to believe they loved me.)
+	MC: (Or maybe I was just tired.)
+	MC: (But the Qi Barrier is weaker now.)
+	MC: (And it's my fault.)
+	[signal arg="show_ending_choices"]
+	- Resign
+		MC: (I can't carry this any longer.)
+		MC: (Let it all go. Let *me* go.)
+		MC: (I walk away from the gate... into the unknown.)
+	- Stay
+		MC: (Mistakes don't define us. What we do after... does.)
+		MC: (If the cracks remain, I'll patch them. If the yōkai return, I'll stop them.)
+		MC: (Even if it takes the rest of eternity.)

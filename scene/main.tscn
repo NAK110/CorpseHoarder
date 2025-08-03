@@ -1,20 +1,27 @@
-[gd_scene load_steps=18 format=3 uid="uid://brfipxfbth4su"]
+[gd_scene load_steps=25 format=3 uid="uid://brfipxfbth4su"]
 
 [ext_resource type="Script" uid="uid://cl633a4vk366t" path="res://scripts/canvas_layer.gd" id="2_of57s"]
-[ext_resource type="PackedScene" uid="uid://dqc8ftaxkmbhh" path="res://scene/bell.tscn" id="2_v0l8b"]
-[ext_resource type="PackedScene" uid="uid://cvtcr58ycrmta" path="res://scene/low_realm.tscn" id="3_0ha60"]
 [ext_resource type="Texture2D" uid="uid://d0jai5iekca7y" path="res://assets/img/Layer 0.png" id="3_b5f6u"]
-[ext_resource type="Texture2D" uid="uid://d2cx1heto8vxo" path="res://assets/img/char/grandpa.png" id="3_of57s"]
-[ext_resource type="PackedScene" uid="uid://c0ilocjawvhts" path="res://scene/middle_realm.tscn" id="4_4j5ol"]
-[ext_resource type="Texture2D" uid="uid://bw0ld6usdrk6j" path="res://assets/img/char/dark_grandpa.png" id="4_mswub"]
+[ext_resource type="Texture2D" uid="uid://cd6sfamg8n2sa" path="res://assets/img/char/dark_seamstress.png" id="3_fdqew"]
+[ext_resource type="Texture2D" uid="uid://b7grror56vchy" path="res://assets/img/char/dark_matchmaker.png" id="3_mswub"]
+[ext_resource type="Texture2D" uid="uid://bc71i2sbw7cyv" path="res://assets/img/char/dark_weaver.png" id="4_0d4pv"]
 [ext_resource type="Texture2D" uid="uid://cvjh1kjiubnx" path="res://assets/img/mirror.png" id="4_wscrc"]
-[ext_resource type="PackedScene" uid="uid://boaojc5ku6dsb" path="res://scene/upper_realm.tscn" id="5_p1hux"]
-[ext_resource type="PackedScene" uid="uid://cjd0dp7kd8uxh" path="res://scene/ghost_info.tscn" id="6_4j5ol"]
+[ext_resource type="Texture2D" uid="uid://dadppbtmk5let" path="res://assets/img/char/dark_fisherman.png" id="5_gtqqq"]
+[ext_resource type="Texture2D" uid="uid://cdx14a0cpoqpc" path="res://assets/img/char/matchmaker.png" id="5_hybxs"]
+[ext_resource type="Texture2D" uid="uid://cesy3sitwihvu" path="res://assets/img/char/dark_blacksmith.png" id="6_gn2wi"]
+[ext_resource type="Texture2D" uid="uid://dejbppbiuhwmo" path="res://assets/img/char/dark_herbalist.png" id="8_gjnwh"]
+[ext_resource type="Texture2D" uid="uid://do33qp6iynr5v" path="res://assets/img/char/seamstress.png" id="9_p8adh"]
+[ext_resource type="Texture2D" uid="uid://sppj0fcdp703" path="res://assets/img/char/weaver.png" id="10_oldxj"]
+[ext_resource type="Texture2D" uid="uid://b8nnumar3ygs6" path="res://assets/img/char/fisherman.png" id="11_4jm02"]
 [ext_resource type="PackedScene" uid="uid://b8j4wro6o4iru" path="res://scene/yes_button.tscn" id="11_mswub"]
 [ext_resource type="PackedScene" uid="uid://b5xp86gxdlqjw" path="res://scene/no_button.tscn" id="12_hybxs"]
 [ext_resource type="FontFile" uid="uid://b1uxjfmiyyjv2" path="res://assets/font/OldNewspaperTypes.ttf" id="12_v2gmf"]
+[ext_resource type="Texture2D" uid="uid://u1m2ccxq3rat" path="res://assets/img/char/blacksmith.png" id="12_vneqc"]
 [ext_resource type="PackedScene" uid="uid://d4ml8swrshp2r" path="res://scene/game_over_panel.tscn" id="13_mswub"]
+[ext_resource type="Texture2D" uid="uid://m014jvsjow6o" path="res://assets/img/char/herbalist.png" id="14_fdqew"]
 [ext_resource type="AudioStream" uid="uid://dvj2d30yko3xq" path="res://assets/soundtrack/horror.mp3" id="14_hybxs"]
+[ext_resource type="AudioStream" uid="uid://cm7yohhnynfc6" path="res://assets/soundtrack/Lotus Pond - Loop.ogg" id="21_fdqew"]
+[ext_resource type="AudioStream" uid="uid://coq0vye105m1i" path="res://assets/soundtrack/Dragon Dance - Loop.ogg" id="22_0d4pv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mswub"]
 font_size = 20
@@ -40,16 +47,81 @@ modulate = Color(1, 1, 1, 0)
 offset_right = 1150.0
 offset_bottom = 652.0
 
-[node name="AngryGrandpa" type="TextureRect" parent="CanvasLayer"]
-offset_right = 525.0
-offset_bottom = 554.0
-texture = ExtResource("4_mswub")
+[node name="AngrySeamstress" type="TextureRect" parent="CanvasLayer"]
+offset_top = 8.0
+offset_right = 427.0
+offset_bottom = 650.0
+texture = ExtResource("3_fdqew")
 expand_mode = 1
 
-[node name="Grandpa" type="TextureRect" parent="CanvasLayer"]
+[node name="AngryWeaver" type="TextureRect" parent="CanvasLayer"]
+offset_top = 8.0
+offset_right = 427.0
+offset_bottom = 650.0
+texture = ExtResource("4_0d4pv")
+expand_mode = 1
+
+[node name="AngryFisherMan" type="TextureRect" parent="CanvasLayer"]
+offset_top = 8.0
+offset_right = 427.0
+offset_bottom = 650.0
+texture = ExtResource("5_gtqqq")
+expand_mode = 1
+
+[node name="AngryBlackSmith" type="TextureRect" parent="CanvasLayer"]
+offset_top = 8.0
+offset_right = 427.0
+offset_bottom = 650.0
+texture = ExtResource("6_gn2wi")
+expand_mode = 1
+
+[node name="AngryMatchmaker" type="TextureRect" parent="CanvasLayer"]
+offset_top = 5.0
+offset_right = 480.0
+offset_bottom = 662.0
+texture = ExtResource("3_mswub")
+expand_mode = 1
+
+[node name="AngryHerbalist" type="TextureRect" parent="CanvasLayer"]
+offset_right = 525.0
+offset_bottom = 554.0
+texture = ExtResource("8_gjnwh")
+expand_mode = 1
+
+[node name="Seamstress" type="TextureRect" parent="CanvasLayer"]
+offset_right = 460.0
+offset_bottom = 655.0
+texture = ExtResource("9_p8adh")
+expand_mode = 1
+
+[node name="Weaver" type="TextureRect" parent="CanvasLayer"]
+offset_right = 460.0
+offset_bottom = 655.0
+texture = ExtResource("10_oldxj")
+expand_mode = 1
+
+[node name="FisherMan" type="TextureRect" parent="CanvasLayer"]
+offset_right = 460.0
+offset_bottom = 655.0
+texture = ExtResource("11_4jm02")
+expand_mode = 1
+
+[node name="BlackSmith" type="TextureRect" parent="CanvasLayer"]
+offset_right = 429.0
+offset_bottom = 646.0
+texture = ExtResource("12_vneqc")
+expand_mode = 1
+
+[node name="Matchmaker" type="TextureRect" parent="CanvasLayer"]
+offset_right = 460.0
+offset_bottom = 655.0
+texture = ExtResource("5_hybxs")
+expand_mode = 1
+
+[node name="Herbalist" type="TextureRect" parent="CanvasLayer"]
 offset_right = 524.0
 offset_bottom = 554.0
-texture = ExtResource("3_of57s")
+texture = ExtResource("14_fdqew")
 expand_mode = 1
 
 [node name="MainLayer" type="TextureRect" parent="CanvasLayer"]
@@ -57,20 +129,6 @@ offset_right = 1151.0
 offset_bottom = 651.0
 texture = ExtResource("3_b5f6u")
 expand_mode = 1
-
-[node name="low_realm_button" parent="CanvasLayer" instance=ExtResource("3_0ha60")]
-position = Vector2(986, 66)
-
-[node name="middle_realm_button" parent="CanvasLayer" instance=ExtResource("4_4j5ol")]
-position = Vector2(990, 230)
-
-[node name="upper_realm_button" parent="CanvasLayer" instance=ExtResource("5_p1hux")]
-position = Vector2(989, 391)
-
-[node name="Bell" parent="CanvasLayer" instance=ExtResource("2_v0l8b")]
-position = Vector2(101, 501)
-
-[node name="ghost_info" parent="CanvasLayer" instance=ExtResource("6_4j5ol")]
 
 [node name="yes_button" parent="CanvasLayer" instance=ExtResource("11_mswub")]
 
@@ -115,15 +173,18 @@ theme_override_fonts/font = ExtResource("12_v2gmf")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("12_v2gmf")
 
-[node name="RoundLeft" type="Label" parent="CanvasLayer/KarmaPanel"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("12_v2gmf")
-
 [node name="GameOverPanel" parent="CanvasLayer" instance=ExtResource("13_mswub")]
 visible = false
 
 [node name="yokaiScream" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 stream = ExtResource("14_hybxs")
+volume_db = -13.795
+
+[node name="BGM_Main" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("21_fdqew")
+
+[node name="BGM_Final" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("22_0d4pv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(578, 331)
+position = Vector2(577, 321)

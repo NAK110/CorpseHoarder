@@ -1,0 +1,14 @@
+MC: (A perfect balance. Of truth and deception.)
+	MC: (Or maybe... just my indecision.)
+	MC: (Some were saved. Some slipped through.)
+	MC: (And I sit here, neither proud nor ashamed.)
+	MC: (Just tired.)
+	[signal arg="show_ending_choices"]
+	- Resign
+		MC: (Balance is fine. But it doesn't feel like justice.)
+		MC: (I'm done.)
+		MC: (Let someone else make sense of it.)
+	- Stay
+		MC: (Balance needs a keeper.)
+		MC: (I will be that hand — steady, uncertain, but present.)
+		MC: (Let the cycle continue.)
